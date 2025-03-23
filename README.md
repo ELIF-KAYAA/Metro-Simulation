@@ -1,57 +1,41 @@
-<<<<<<< HEAD
-İstanbul Metro Ağı Rota Bulucu
+# İstanbul Metro Ağı Rota Simülasyonu
 
-Bu proje, İstanbul metro ağı üzerinden kullanıcının seçtiği iki istasyon arasındaki en az aktarmalı ve en hızlı rotayı hesaplayarak graf üzerinde görsel olarak sunar. Kullanıcıdan başlangıç ve hedef istasyonu alır, sonra bu bilgilerle iki farklı algoritmayla yol bulma işlemi yapar.
+Bu proje, İstanbul'daki metro istasyonları arasında en az aktarmalı ve en hızlı rotayı hesaplayan basit bir Python uygulamasıdır. Kullanıcıdan başlangıç ve hedef istasyonlar alınarak, iki farklı algoritma ile en uygun yol bulunur ve grafik üzerinde gösterilir.
 
-⚖️ Kullanılan Teknolojiler ve Kütüpaneler
+## 🛠 Kullanılan Teknolojiler ve Kütüphaneler
 
-Python 3.x
+- **Python**: Temel programlama dili olarak kullanıldı.
+- **NetworkX**: Metro istasyonları ve hatları bir graf yapısıyla temsil edildi.
+- **Matplotlib**: Grafiksel görselleştirme yapılarak, rotalar harita üzerinde çizildi.
+- **heapq**: A* algoritması için öncelikli kuyruk yapısı sağlandı.
+- **collections.deque**: BFS algoritması için hızlı ve verimli bir kuyruk kullanımı sağlandı.
+- **math**: Öklid mesafesi ile tahmini süre hesaplamalarında kullanıldı.
 
-collections: deque yapısı ile BFS için kuyruk yapısı kullanıldı.
+## ⚙️ Algoritmaların Çalışma Mantığı
 
-heapq: A* algoritması için öncelik sırasına göre eleman çeken min-heap veri yapısı sağlandı.
+### 🔴 BFS (Breadth-First Search)
+- En az durak geçişiyle hedefe ulaşmayı amaçlar.
+- Her istasyonu sırayla dolaşır ve ilk bulduğu çözümü kabul eder.
+- Aktarma sayısı azdır ancak süre uzun olabilir.
 
-math: Heuristic fonksiyonu için Öklid uzaklığı hesaplandı.
+### 🔵 A* (A Star)
+- En kısa süreyi bulmaya çalışır.
+- Gerçek yol süresi + tahmini süre (heuristic) üzerinden hesap yapar.
+- Daha zeki bir arama yapar ama hesaplama maliyeti biraz daha yüksektir.
 
-networkx: Metro istasyonlarının grafigini oluşturmak için kullanıldı.
-
-matplotlib: Grafiğin görsel olarak çizilmesi sağlandı.
-
-⚖️ Algoritmalar
-
-BFS (Breadth-First Search) - En Az Aktarmalı Rota
-
-BFS, graf yapısında bir noktadan diğerine en az durak (düğüm) sayısıyla ulaşan rotayı bulmak için kullanıldı. Her istasyon birer düğüm olarak ele alındı. Kuyruk yapısı kullanılarak istasyonlar birer birer gezildi ve hedefe ulaşan en kısa yolda minimum geçiş sayısının bulunması sağlandı.
-
-Avantajı: Aktarma sayısını azaltır. Seyahat süreleri fark etmeksizin, en az istasyon geçilen rotayı bulur.
-
-A* Algoritması - En Hızlı Rota
-
-A* algoritması, gerçek seyahat sürelerini dikkate alarak en hızlı rotayı bulur. Her adımda, gidiş maliyeti (gerçek süre) ile hedefe kalan tahmini uzaklık (heuristic) toplanarak en az toplam maliyetli yol tercih edilir.
-
-Heuristic (Tahmini Uzaklık): Öklid uzaklığı kullanıldı. Ayrıca farklı hatlara geçiş varsa ek süre cezaları uygulandı.
-
-Avantajı: Gerçek seyahat sürelerini dikkate alarak kullanıcıya en hızlı rotayı sunar.
-
-Neden Bu Algoritmalar?
-
-✔️ BFS: Basit, garantili, en az duraklı yol için ideal.
-
-✔️ A*: Gerçek dünyadaki süre farklarını dikkate alarak daha mantıklı rotalar verir.
-Grafikte BFS rotası kırmızı, A* rotası mavi olarak ayrıca gösterilir. Başlangıç ve hedef istasyonlar renkle vurgulanmıştır.
+### 📌 Neden Bu İki Algoritma?
+- BFS ile kullanıcının en az durakla gitmesini,
+- A* ile de en hızlı şekilde ulaşmasını karşılaştırmak istedim.
 
 Geliştirme Fikirleri
+Kullanıcı arayüzü (GUI) ile daha interaktif hale getirilebilir.
 
-✨ Grafiksel arayüz (GUI) ile istasyon seçimi yapılabilir (Tkinter veya PyQt).
+Gerçek konum verileriyle daha doğru mesafeler hesaplanabilir.
 
-⌛️ Duraklar arası yoğunluk/saat bilgisi eklenerek daha dinamik rota bulma yapılabilir.
+İstanbul dışındaki şehirler veya farklı ulaşım türleri (otobüs, metrobüs) entegre edilebilir.
+Geliştirme Fikirleri
+Kullanıcı arayüzü (GUI) ile daha interaktif hale getirilebilir.
 
-🌐 Gerçek İstanbul haritasına entegre edilerek coğrafi bazlı rota sistemi kurulabilir.
+Gerçek konum verileriyle daha doğru mesafeler hesaplanabilir.
 
-🏛️ Farklı hatlar (M1, M2, Marmaray vb.) renklerle ayrılabilir.
-
-📃 Rota bilgisi PDF olarak dışa aktarılabilir.
-=======
-# Metro-Simulation
-Python ile metro ağı üzerinde rota simülasyonu
->>>>>>> 1f3f8eba098a077b9084de2b6451c70f6ba880e4
+İstanbul dışındaki şehirler veya farklı ulaşım türleri (otobüs, metrobüs) entegre edilebilir.
