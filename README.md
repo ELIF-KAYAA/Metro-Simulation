@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 İstanbul Metro Ağı Rota Bulucu
 
 Bu proje, İstanbul metro ağı üzerinden kullanıcının seçtiği iki istasyon arasındaki en az aktarmalı ve en hızlı rotayı hesaplayarak graf üzerinde görsel olarak sunar. Kullanıcıdan başlangıç ve hedef istasyonu alır, sonra bu bilgilerle iki farklı algoritmayla yol bulma işlemi yapar.
@@ -50,3 +51,7 @@ Geliştirme Fikirleri
 🏛️ Farklı hatlar (M1, M2, Marmaray vb.) renklerle ayrılabilir.
 
 📃 Rota bilgisi PDF olarak dışa aktarılabilir.
+=======
+# Metro-Simulation
+Python ile metro ağı üzerinde rota simülasyonu
+>>>>>>> 1f3f8eba098a077b9084de2b6451c70f6ba880e4
