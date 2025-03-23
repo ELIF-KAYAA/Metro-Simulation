@@ -39,3 +39,5 @@ Kullanıcı arayüzü (GUI) ile daha interaktif hale getirilebilir.
 Gerçek konum verileriyle daha doğru mesafeler hesaplanabilir.
 
 İstanbul dışındaki şehirler veya farklı ulaşım türleri (otobüs, metrobüs) entegre edilebilir.
+
+
